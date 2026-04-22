@@ -1,15 +1,73 @@
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
+    background: black;
+    color: #00ff88;
 }
 
-body {
-    background: #0f172a;
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #111;
+    border-bottom: 1px solid #00ff88;
+}
+
+.nav button {
+    margin-left: 10px;
+    background: transparent;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 6px 10px;
+}
+
+/* LAYOUT */
+.container {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* CARDS */
+.card {
+    border: 1px solid #00ff88;
+    padding: 15px;
+    cursor: pointer;
+    background: #111;
+}
+
+/* COLORS */
+.green { color: #00ff88; }
+.red { color: red; }
+
+/* STOCK PAGE */
+.chart {
+    height: 200px;
+    border: 1px solid #00ff88;
+    margin: 20px 0;
+}
+
+.actions button {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.buy {
+    background: #00ff88;
+    color: black;
+}
+
+.sell {
+    background: red;
     color: white;
 }
 
-.container {
-    padding: 20px;
+/* GLOW */
+.glow {
+    text-shadow: 0 0 10px #00ff88;
 }

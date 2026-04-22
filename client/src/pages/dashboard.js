@@ -1,22 +1,32 @@
-import { createEl } from "../helpers/dom";
-
 export function loadDashboard() {
-    const app = document.querySelector("#app");
+    const page = document.querySelector("#page");
 
-    app.innerHTML = "";
+    page.innerHTML = `
+        <div class="container">
 
-    const container = createEl("div", "container");
+            <input class="search" placeholder="Search stocks..." />
 
-    const title = createEl("h1", null, "📊 Stock Tracker");
+            <div class="grid">
 
-    const search = createEl("input");
-    search.placeholder = "Search stocks (AAPL, TSLA...)";
+                <div class="card" onclick="navigate('stock')">
+                    <h3>AAPL</h3>
+                    <p>Apple Inc</p>
+                    <p class="green">$180</p>
+                </div>
 
-    const stockList = createEl("div", "stock-list");
+                <div class="card" onclick="navigate('stock')">
+                    <h3>TSLA</h3>
+                    <p>Tesla</p>
+                    <p class="red">$240</p>
+                </div>
 
-    container.appendChild(title);
-    container.appendChild(search);
-    container.appendChild(stockList);
+                <div class="card" onclick="navigate('stock')">
+                    <h3>GOOGL</h3>
+                    <p>Google</p>
+                    <p class="green">$140</p>
+                </div>
 
-    app.appendChild(container);
+            </div>
+        </div>
+    `;
 }

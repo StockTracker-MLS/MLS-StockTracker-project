@@ -1,6 +1,6 @@
 import "./style.css";
-import { loadDashboard } from "./pages/dashboard";
+import { initApp } from "./helpers/dom";
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadDashboard();
+    initApp();
 });
