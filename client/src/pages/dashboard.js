@@ -1,11 +1,28 @@
 export function loadDashboard() {
-    const page = document.querySelector("#page");
+    const app = document.querySelector("#app");
 
-    page.innerHTML = `
+    const user = localStorage.getItem("user");
+
+    app.innerHTML = `
+        <!-- NAVBAR -->
+        <div class="navbar">
+            <h2 onclick="navigate('dashboard')">📊 STOCK-X</h2>
+
+            <div class="nav-right">
+                <span class="user">${user}</span>
+                <button id="logout">Logout</button>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
         <div class="container">
 
+            <h1 class="glow">Welcome back 👋</h1>
+
+            <!-- SEARCH -->
             <input class="search" placeholder="Search stocks..." />
 
+            <!-- STOCK GRID -->
             <div class="grid">
 
                 <div class="card" onclick="navigate('stock')">
@@ -29,4 +46,15 @@ export function loadDashboard() {
             </div>
         </div>
     `;
+
+    // LOGOUT
+    document.getElementById("logout").onclick = () => {
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("user");
+
+        // FUTURE BACKEND:
+        // fetch("/api/logout")
+
+        location.reload();
+    };
 }

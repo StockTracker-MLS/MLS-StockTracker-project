@@ -1,6 +1,13 @@
 import "./style.css";
-import { initApp } from "./helpers/dom";
+import { loadLogin } from "./pages/login";
+import { loadDashboard } from "./pages/dashboard";
 
 document.addEventListener("DOMContentLoaded", () => {
-    initApp();
+    const isLoggedIn = localStorage.getItem("loggedIn");
+
+    if (isLoggedIn) {
+        loadDashboard();
+    } else {
+        loadLogin();
+    }
 });
